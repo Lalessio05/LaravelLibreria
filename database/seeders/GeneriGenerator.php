@@ -5,23 +5,23 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Genere;
+use Faker\Factory as Faker;
 
 
-class GeneriSeeder extends Seeder
+
+class GeneriGenerator extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        $generi = [
-            ['nome' => 'Fantasy'],
-            ['nome' => 'Romanzo'],
-            ['nome' => 'Thriller']
-        ];
+        $faker = Faker::create();
 
-        foreach ($generi as $genere) {
-            Genere::create($genere);
+        foreach (range (1,9) as $index){
+            Genere::create([
+                'nome' => $faker->name(),
+            ]);
         }
     }
 }

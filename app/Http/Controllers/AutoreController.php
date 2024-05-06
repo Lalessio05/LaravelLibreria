@@ -2,15 +2,15 @@
  
 namespace App\Http\Controllers;
  
-use App\Models\User;
-use Illuminate\View\View;
-use App\Models\Autore; 
+use App\Models\Autore;
+use Illuminate\Http\Request;
  
 class AutoreController extends Controller
 {
     public function index()
     {
         $autori = Autore::all();
+        echo 'Aiuto';
         return response()->json($autori);
     }
 
