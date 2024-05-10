@@ -17,11 +17,6 @@ class CaseEditriciGenerator extends Seeder
     {
         $faker = Faker::create();
 
-        $caseEditrici = [
-            ['nome' => 'Mondadori', 'dataFondazione' => '1907-01-01'],
-            ['nome' => 'Penguin Random House', 'dataFondazione' => '2013-07-01'],
-            ['nome' => 'HarperCollins', 'dataFondazione' => '1989-11-01']
-        ];
 
         foreach (range(1,9) as $index) {
             CasaEditrice::create([
