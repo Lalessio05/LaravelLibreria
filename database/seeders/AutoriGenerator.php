@@ -20,7 +20,7 @@ class AutoriGenerator extends Seeder
 
         foreach (range(1,10) as $index){
             Autore::create([
-                'nome' => $faker->name(),
+                'nome' => $faker->firstName(),
                 'cognome' => $faker->lastName(),
                 'dataNascita' => $faker->date(),
                 'idNazione_fk' => $faker->numberBetween(1,9),

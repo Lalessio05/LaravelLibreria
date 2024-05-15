@@ -16,5 +16,5 @@ Route::put('/libri/{id}', [Controllers\LibroController::class, 'update']);
 Route::delete('/libri/{id}', [Controllers\LibroController::class, 'destroy']);
 
 Route::get('/', function () {
-    return '<h1>Ciao</h1>';
+    return view('welcome');
 });

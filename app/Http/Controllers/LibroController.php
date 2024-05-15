@@ -10,7 +10,6 @@ class LibroController extends Controller
     public function index()
     {
         $autori = Libro::all();
-        echo 'Aiuto';
         return response()->json($autori);
     }
 
