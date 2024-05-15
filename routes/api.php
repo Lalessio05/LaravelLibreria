@@ -1,7 +1,14 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
+
+
+Route::get('/user', function (Request $request) {
+    return $request->user();
+})->middleware('auth:api');
+
 
 Route::get('/autori', [Controllers\AutoreController::class, 'index']);
 Route::post('/autori', [Controllers\AutoreController::class, 'store']);
@@ -14,7 +21,3 @@ Route::post('/libri', [Controllers\LibroController::class, 'store']);
 Route::get('/libri/{id}', [Controllers\LibroController::class, 'show']);
 Route::put('/libri/{id}', [Controllers\LibroController::class, 'update']);
 Route::delete('/libri/{id}', [Controllers\LibroController::class, 'destroy']);
-
-Route::get('/', function () {
-    return view('welcome');
-});
