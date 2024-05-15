@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
-use function Laravel\Prompts\password;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -17,9 +17,7 @@ class UserController extends Controller
     {
         try{
             $payload = json_decode($request->getContent(),true);
-            //$tmp = $payload;
-            $payload['password'] = bcrypt($payload->password);
-            echo bcrypt($payload['password']);
+            $payload['password'] = Hash::make($payload['password']);
             $user = User::create($payload);
             return response()->json($user, 201);
 
