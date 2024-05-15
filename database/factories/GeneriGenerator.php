@@ -1,12 +1,10 @@
 <?php
+namespace Database\Factories;
 
-namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 use App\Models\Genere;
 use Faker\Factory as Faker;
-
+use Illuminate\Database\Seeder;
 
 
 class GeneriGenerator extends Seeder

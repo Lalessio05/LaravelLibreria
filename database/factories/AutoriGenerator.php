@@ -1,11 +1,11 @@
 <?php
+namespace Database\Factories;
 
-namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 use App\Models\Autore;
 use Faker\Factory as Faker;
+use Illuminate\Database\Seeder;
+
 
 class AutoriGenerator extends Seeder
 {

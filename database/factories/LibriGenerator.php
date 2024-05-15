@@ -1,11 +1,10 @@
 <?php
 
-namespace Database\Seeders;
+namespace Database\Factories;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
-use Faker\Factory as Faker;
 use App\Models\Libro;
+use Faker\Factory as Faker;
+use Illuminate\Database\Seeder;
 
 class LibriGenerator extends Seeder
 {

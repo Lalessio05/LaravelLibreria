@@ -21,3 +21,5 @@ Route::post('/libri', [Controllers\LibroController::class, 'store']);
 Route::get('/libri/{id}', [Controllers\LibroController::class, 'show']);
 Route::put('/libri/{id}', [Controllers\LibroController::class, 'update']);
 Route::delete('/libri/{id}', [Controllers\LibroController::class, 'destroy']);
+
+Route::post('/users',[Controllers\UserController::class,'store']);

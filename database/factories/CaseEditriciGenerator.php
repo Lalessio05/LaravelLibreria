@@ -1,11 +1,10 @@
 <?php
 
-namespace Database\Seeders;
+namespace Database\Factories;
 
-use Faker\Factory as Faker;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 use App\Models\CasaEditrice;
+use Faker\Factory as Faker;
+use Illuminate\Database\Seeder;
 
 
 class CaseEditriciGenerator extends Seeder

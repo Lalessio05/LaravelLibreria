@@ -2,7 +2,11 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Database\Factories\AutoriGenerator;
+use Database\Factories\CaseEditriciGenerator;
+use Database\Factories\GeneriGenerator;
+use Database\Factories\LibriGenerator;
+use Database\Factories\NazioniGenerator;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder

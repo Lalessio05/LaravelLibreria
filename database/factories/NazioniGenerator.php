@@ -1,10 +1,10 @@
 <?php
 
-namespace Database\Seeders;
+namespace Database\Factories;
 
-use Illuminate\Database\Seeder;
 use App\Models\Nazione;
 use Faker\Factory as Faker;
+use Illuminate\Database\Seeder;
 
 
 class NazioniGenerator extends Seeder
