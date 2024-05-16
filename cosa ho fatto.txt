@@ -5,5 +5,12 @@ Ora non dà più 500
 Ho aggiunto
 Passport::enablePasswordGrant();
 All'appServiceProvider
-
+Prima dava
+unsupported grant type
+Ora dà
+{
+    "error": "invalid_client",
+    "error_description": "Client authentication failed",
+    "message": "Client authentication failed"
+}
 
