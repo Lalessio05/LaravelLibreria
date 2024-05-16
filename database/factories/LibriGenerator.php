@@ -19,9 +19,9 @@ class LibriGenerator extends Seeder
             Libro::create([
                 'titolo' => $faker->title(),
                 'annoPubblicazione' => $faker->year(),
-                'idAutore_fk' => $faker->numberBetween(1, 10), // Sostituisci con l'intervallo corretto di ID degli autori
-                'idCasaEditrice_fk' => $faker->numberBetween(1, 9), // Sostituisci con l'intervallo corretto di ID delle case editrici
-                'idGenere_fk' => $faker->numberBetween(1, 9), // Sostituisci con l'intervallo corretto di ID dei generi
+                'idAutore_fk' => $faker->numberBetween(1, 10),
+                'idCasaEditrice_fk' => $faker->numberBetween(1, 9), 
+                'idGenere_fk' => $faker->numberBetween(1, 9),
                 'ISBN' => $faker->isbn13(),
             ]);
         }

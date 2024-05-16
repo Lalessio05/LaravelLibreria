@@ -15,7 +15,7 @@ class Autore extends Model
         'dataNascita',
         'idNazione_fk',
     ];
-    public function nazione()
+    public function nazione(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Nazione::class, 'idNazione_fk');
     }
