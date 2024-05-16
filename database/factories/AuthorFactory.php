@@ -2,12 +2,12 @@
 namespace Database\Factories;
 
 
-use App\Models\Autore;
+use App\Models\Author;
 use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
 
 
-class AutoriGenerator extends Seeder
+class AuthorFactory extends Seeder
 {
     /**
      * Run the database seeds.
@@ -19,11 +19,11 @@ class AutoriGenerator extends Seeder
         $faker = Faker::create();
 
         foreach (range(1,10) as $index){
-            Autore::create([
-                'nome' => $faker->firstName(),
-                'cognome' => $faker->lastName(),
-                'dataNascita' => $faker->date(),
-                'idNazione_fk' => $faker->numberBetween(1,9),
+            Author::create([
+                'first_name' => $faker->firstName(),
+                'last_name' => $faker->lastName(),
+                'birth_date' => $faker->date(),
+                'country_id_fk' => $faker->numberBetween(1,9),
             ]);
         }
     }

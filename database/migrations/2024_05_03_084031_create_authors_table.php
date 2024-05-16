@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('autore', function (Blueprint $table) {
+        Schema::create('authors', function (Blueprint $table) {
             $table->id();
-            $table->char('nome',30);
-            $table->char('cognome',30);
-            $table->date('dataNascita');
-            $table->unsignedBigInteger('idNazione_fk');
-            $table->foreign('idNazione_fk')->references('id')->on('nazione');
+            $table->char('first_name',30);
+            $table->char('last_name',30);
+            $table->date('birth_date');
+            $table->unsignedBigInteger('country_id_fk');
+            $table->foreign('country_id_fk')->references('id')->on('countries');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('autore');
+        Schema::dropIfExists('authors');
     }
 };

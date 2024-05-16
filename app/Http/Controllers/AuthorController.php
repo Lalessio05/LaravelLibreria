@@ -1,15 +1,15 @@
 <?php
- 
+
 namespace App\Http\Controllers;
- 
-use App\Models\Autore;
+
+use App\Models\Author;
 use Illuminate\Http\Request;
- 
-class AutoreController extends Controller
+
+class AuthorController extends Controller
 {
     public function index()
     {
-        $autori = Autore::all();
+        $autori = Author::all();
         return response()->json($autori);
     }
 
@@ -17,41 +17,41 @@ class AutoreController extends Controller
     {
         try{
             $payload = json_decode($request->getContent(),true);
-            $autore = Autore::create($payload);
+            $autore = Author::create($payload);
             return response()->json($autore, 201);
-            
+
         }catch(\Exception $e0){
             if (env("APP_ENV") === "local")
                 return response()->json($e0->getMessage(),412);
-            else 
+            else
                 return response()->json(["error"=>$e0->getMessage()],412);
         }
     }
 
     public function show($id)
     {
-        $autore = Autore::findOrFail($id);
+        $autore = Author::findOrFail($id);
         return response()->json($autore);
     }
 
     public function update(Request $request, $id)
     {
         try{
-        $autore = Autore::findOrFail($id);
+        $autore = Author::findOrFail($id);
         $autore->update($request->all());
         return response()->json($autore, 200);
         }
         catch(\Exception $e){
             if (env("APP_ENV") === "local")
             return response()->json($e->getMessage(),412);
-        else 
+        else
             return response()->json(["error"=>$e->getMessage()],412);
         }
     }
 
     public function destroy($id)
     {
-        $autore = Autore::findOrFail($id);
+        $autore = Author::findOrFail($id);
         $autore->delete();
         return response()->json(null, 204);
     }

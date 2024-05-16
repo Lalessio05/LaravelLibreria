@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use Database\Factories\AutoriGenerator;
-use Database\Factories\CaseEditriciGenerator;
-use Database\Factories\GeneriGenerator;
-use Database\Factories\LibriGenerator;
-use Database\Factories\NazioniGenerator;
+use Database\Factories\AuthorFactory;
+use Database\Factories\CountryFactory;
+use Database\Factories\PublisherFactory;
+use Database\Factories\GenreFactory;
+use Database\Factories\BookFactory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -17,11 +17,11 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            NazioniGenerator::class,
-            CaseEditriciGenerator::class,
-            GeneriGenerator::class,
-            AutoriGenerator::class,
-            LibriGenerator::class,
+            PublisherFactory::class,
+            CountryFactory::class,
+            GenreFactory::class,
+            AuthorFactory::class,
+            BookFactory::class,
         ]);
     }
 }

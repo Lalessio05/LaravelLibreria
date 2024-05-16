@@ -2,12 +2,12 @@
 namespace Database\Factories;
 
 
-use App\Models\Genere;
+use App\Models\Genre;
 use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
 
 
-class GeneriGenerator extends Seeder
+class GenreFactory extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,8 +17,8 @@ class GeneriGenerator extends Seeder
         $faker = Faker::create();
 
         foreach (range (1,9) as $index){
-            Genere::create([
-                'nome' => $faker->name(),
+            Genre::create([
+                'name' => $faker->name(),
             ]);
         }
     }

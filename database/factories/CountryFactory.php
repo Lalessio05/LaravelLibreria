@@ -2,12 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\CasaEditrice;
+use App\Models\Country;
 use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
 
 
-class CaseEditriciGenerator extends Seeder
+class CountryFactory extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,10 +15,10 @@ class CaseEditriciGenerator extends Seeder
     public function run(): void
     {
         $faker = Faker::create();
+
         foreach (range(1,9) as $index) {
-            CasaEditrice::create([
-                'nome' => $faker->company,
-                'dataFondazione' => $faker->date(),
+            Country::create([
+                'name' => $faker->country(),
             ]);
         }
     }

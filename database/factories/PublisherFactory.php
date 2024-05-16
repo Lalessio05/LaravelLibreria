@@ -2,12 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\Nazione;
+use App\Models\Publisher;
 use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
 
 
-class NazioniGenerator extends Seeder
+class PublisherFactory extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,10 +15,10 @@ class NazioniGenerator extends Seeder
     public function run(): void
     {
         $faker = Faker::create();
-
         foreach (range(1,9) as $index) {
-            Nazione::create([
-                'nome' => $faker->country(),
+            Publisher::create([
+                'name' => $faker->company,
+                'foundation_date' => $faker->date(),
             ]);
         }
     }
