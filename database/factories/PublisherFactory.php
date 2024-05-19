@@ -22,4 +22,12 @@ class PublisherFactory extends Seeder
             ]);
         }
     }
+    public function definition() : array
+    {
+        $faker = Faker::create();
+        return [
+            'name' => $faker->company,
+            'foundation_date' => $faker->date(),
+        ];
+    }
 }

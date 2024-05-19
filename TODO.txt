@@ -1,0 +1,6 @@
+Sistemare postman
+Sistemare relazioni nei generatori,
+https://laravel.com/docs/11.x/eloquent-factories#main-content
+faker
+https://laravel.com/docs/11.x/eloquent-resources#main-content
+Sistemare ed implementare tutte le chiamate

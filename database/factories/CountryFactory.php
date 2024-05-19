@@ -20,6 +20,13 @@ class CountryFactory extends Seeder
             Country::create([
                 'name' => $faker->country(),
             ]);
+
         }
+    }
+    public function definition():array{
+        $faker = Faker::create();
+        return [
+            'name' => $faker->country(),
+        ];
     }
 }

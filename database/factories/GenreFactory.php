@@ -9,6 +9,29 @@ use Illuminate\Database\Seeder;
 
 class GenreFactory extends Seeder
 {
+
+    private array $genres = [
+        'Fantasy',
+        'Science Fiction',
+        'Mystery',
+        'Thriller',
+        'Romance',
+        'Western',
+        'Dystopian',
+        'Contemporary',
+        'Historical Fiction',
+        'Horror',
+        'Non-Fiction',
+        'Memoir',
+        'Biography',
+        'Self-Help',
+        'Health',
+        'Travel',
+        'Guide',
+        'Families & Relationships',
+        'Humor',
+        'Children’s'
+    ];
     /**
      * Run the database seeds.
      */
@@ -21,5 +44,11 @@ class GenreFactory extends Seeder
                 'name' => $faker->name(),
             ]);
         }
+    }
+    public function definition():array{
+        $faker = Faker::create();
+        return [
+            'name' => $faker->randomElement($this->genres),
+        ];
     }
 }
