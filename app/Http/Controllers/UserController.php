@@ -13,19 +13,20 @@ class UserController extends Controller
     {
 
     }
+
     public function store(Request $request)
     {
-        try{
-            $payload = json_decode($request->getContent(),true);
+        try {
+            $payload = json_decode($request->getContent(), true);
             $payload['password'] = Hash::make($payload['password']);
             $user = User::create($payload);
             return response()->json($user, 201);
 
-        }catch(Exception $e0){
+        } catch (Exception $e0) {
             if (env("APP_ENV") === "local")
-                return response()->json($e0->getMessage(),412);
+                return response()->json($e0->getMessage(), 412);
             else
-                return response()->json(["error"=>$e0->getMessage()],412);
+                return response()->json(["error" => $e0->getMessage()], 412);
         }
     }
 }

@@ -1,13 +1,13 @@
 <?php
+
 namespace Database\Factories;
 
 
-use App\Models\Genre;
 use Faker\Factory as Faker;
-use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 
-class GenreFactory extends Seeder
+class GenreFactory extends Factory
 {
 
     private array $genres = [
@@ -32,20 +32,9 @@ class GenreFactory extends Seeder
         'Humor',
         'Children’s'
     ];
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
-    {
-        $faker = Faker::create();
 
-        foreach (range (1,9) as $index){
-            Genre::create([
-                'name' => $faker->name(),
-            ]);
-        }
-    }
-    public function definition():array{
+    public function definition(): array
+    {
         $faker = Faker::create();
         return [
             'name' => $faker->randomElement($this->genres),

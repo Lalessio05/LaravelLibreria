@@ -7,8 +7,6 @@ use App\Models\Book;
 use App\Models\Country;
 use App\Models\Genre;
 use App\Models\Publisher;
-use App\Models\User;
-use App\Models\User2;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,12 +16,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-//        Author::factory(10)->create();
-//        Country::factory(9)->create();
-//        Publisher::factory(9)->create();
-        Genre::factory(9)->create();
-//        Book::factory(50)->create();
-//        User2::factory(10)->create();
-
+        //Crea 5 country con 3 autori l'una
+        Country::factory()
+            ->count(5)
+            ->hasAuthors(3)
+            ->create();
     }
 }
