@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\AuthorResource;
 use App\Models\Author;
 use Exception;
 use Illuminate\Http\Request;
@@ -19,7 +20,7 @@ class AuthorController extends Controller
         try {
             $payload = json_decode($request->getContent(), true);
             $autore = Author::create($payload);
-            return response()->json($autore, 201);
+            return new AuthorResource($autore, 201);
 
         } catch (Exception $e0) {
             if (env("APP_ENV") === "local")
@@ -32,15 +33,17 @@ class AuthorController extends Controller
     public function show($id)
     {
         $autore = Author::findOrFail($id);
-        return response()->json($autore);
+        return new AuthorResource($autore);
     }
 
     public function update(Request $request, $id)
     {
         try {
+
             $autore = Author::findOrFail($id);
             $autore->update($request->all());
-            return response()->json($autore, 200);
+            return new AuthorResource($autore, 200);
+
         } catch (Exception $e) {
             if (env("APP_ENV") === "local")
                 return response()->json($e->getMessage(), 412);

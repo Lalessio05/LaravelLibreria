@@ -9,9 +9,11 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Country extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'name',
     ];
+
     public function authors(): HasMany
     {
         return $this->hasMany(Author::class);

@@ -18,7 +18,7 @@ class AuthorFactory extends Factory
             'first_name' => $faker->firstName(),
             'last_name' => $faker->lastName(),
             'birth_date' => $faker->date(),
-            'country_id_fk' => Country::factory(),
+            'country_id' => Country::factory(),
         ];
     }
 }

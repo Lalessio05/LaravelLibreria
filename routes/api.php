@@ -1,16 +1,13 @@
 <?php
 
+use App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers;
 
 
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
-
-
-
 
 
 Route::middleware('auth:api')->group(function () {
@@ -26,8 +23,7 @@ Route::middleware('auth:api')->group(function () {
     Route::put('/autori/{id}', [Controllers\AuthorController::class, 'update']);
     Route::delete('/autori/{id}', [Controllers\AuthorController::class, 'destroy']);
 
-    Route::post('/users',[Controllers\UserController::class,'store']);
-
-
+    Route::get('/countries', [Controllers\CountryController::class, 'index']);
 });
-Route::get('/countries', [Controllers\CountryController::class, 'index']);
+Route::post('/users', [Controllers\UserController::class, 'store']);
+

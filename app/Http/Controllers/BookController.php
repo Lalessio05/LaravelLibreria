@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\BookResource;
 use App\Models\Book;
 use Illuminate\Http\Request;
 
@@ -10,32 +11,32 @@ class BookController extends Controller
     public function index()
     {
         $autori = Book::all();
-        return response()->json($autori);
+        return BookResource::collection($autori);
     }
 
     public function store(Request $request)
     {
-        $libri = Book::create($request->all());
-        return response()->json($libri, 201);
+        $libro = Book::create($request->all());
+        return new BookResource($libro, 201);
     }
 
     public function show($id)
     {
-        $libri = Book::findOrFail($id);
-        return response()->json($libri);
+        $libro = Book::findOrFail($id);
+        return new BookResource($libro);
     }
 
     public function update(Request $request, $id)
     {
-        $libri = Book::findOrFail($id);
-        $libri->update($request->all());
-        return response()->json($libri, 200);
+        $libro = Book::findOrFail($id);
+        $libro->update($request->all());
+        return new BookResource($libro, 200);
     }
 
     public function destroy($id)
     {
-        $libri = Book::findOrFail($id);
-        $libri->delete();
+        $libro = Book::findOrFail($id);
+        $libro->delete();
         return response()->json(null, 204);
     }
 }

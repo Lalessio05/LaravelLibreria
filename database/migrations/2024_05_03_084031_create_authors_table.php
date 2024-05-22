@@ -16,8 +16,8 @@ return new class extends Migration
             $table->char('first_name',30);
             $table->char('last_name',30);
             $table->date('birth_date');
-            $table->unsignedBigInteger('country_id_fk');
-            $table->foreign('country_id_fk')->references('id')->on('countries');
+            $table->unsignedBigInteger('country_id');
+            $table->foreign('country_id')->references('id')->on('countries');
             $table->timestamps();
         });
     }

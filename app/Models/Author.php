@@ -9,14 +9,16 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Author extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'first_name',
         'last_name',
         'birth_date',
-        'country_id_fk',
+        'country_id',
     ];
+
     public function country(): BelongsTo
     {
-        return $this->belongsTo(Country::class, 'country_id_fk');
+        return $this->belongsTo(Country::class, 'country_id');
     }
 }

@@ -1,4 +1,3 @@
-Sistemare postman
 Sistemare relazioni nei generatori,
 https://laravel.com/docs/11.x/eloquent-factories#main-content
 faker

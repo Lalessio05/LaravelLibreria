@@ -17,9 +17,9 @@ class BookFactory extends Factory
         return [
             'title' => $faker->sentence(),
             'publication_year' => $faker->year(),
-            'author_id_fk' => Author::factory(),
-            'publisher_id_fk' => Publisher::factory(),
-            'genre_id_fk' => Genre::factory(),
+            'author_id' => Author::factory(),
+            'publisher_id' => Publisher::factory(),
+            'genre_id' => Genre::factory(),
             'ISBN' => $faker->isbn13(),
         ];
     }

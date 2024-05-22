@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id();
             $table->char('title',100);
             $table->year("publication_year");
-            $table->unsignedBigInteger('author_id_fk');
-            $table->foreign('author_id_fk')->references('id')->on('authors');
-            $table->unsignedBigInteger('publisher_id_fk');
-            $table->foreign('publisher_id_fk')->references('id')->on('publishers');
-            $table->unsignedBigInteger('genre_id_fk');
-            $table->foreign('genre_id_fk')->references('id')->on('genres');
+            $table->unsignedBigInteger('author_id');
+            $table->foreign('author_id')->references('id')->on('authors');
+            $table->unsignedBigInteger('publisher_id');
+            $table->foreign('publisher_id')->references('id')->on('publishers');
+            $table->unsignedBigInteger('genre_id');
+            $table->foreign('genre_id')->references('id')->on('genres');
             $table->char('ISBN',13);
             $table->timestamps();
         });
